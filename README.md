@@ -39,6 +39,7 @@ Technology specific interface definition for Ethernet MAC interfaces according t
 
 ### Open Issue List
 - Thorsten Heinze (Thorsten.Heinze@openBackhaul.com)
-- to be provided
+- [macInterface/issues](../../issues)
 
 ### Comments
+./.
