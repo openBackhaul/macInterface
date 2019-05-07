@@ -14,8 +14,8 @@ Technology specific interface definition for Ethernet MAC interfaces according t
 - 0.1.0-tsp.190131.1551+overview.1 : [190131 EthernetMacPacCD.PNG](./190131%20EthernetMacPacCD.PNG)
 
 ### List of Classes
-- Thorsten Heinze (Thorsten.Heinze@openBackhaul.com)
-- to be provided
+- Waseem Sattar (Waseem.Sattar@openBackhaul.com)
+- to be provided 
 
 ### GenDoc Export
 - Thorsten Heinze (Thorsten.Heinze@openBackhaul.com)
