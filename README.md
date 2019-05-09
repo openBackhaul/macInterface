@@ -7,22 +7,21 @@ Technology specific interface definition for Ethernet MAC interfaces according t
 
 ### UML
 - Thorsten Heinze (Thorsten.Heinze@openBackhaul.com)
-- 0.1.0-tsp.190131.1551 : [190131 EthernetMacPac.zip](./190131%20EthernetMacPac.zip)
+- [MacInterface_1.0.0-tsp.190509.2000](./MacInterface_1.0.0-tsp.190509.2000.zip)
 
 ### Overview 
 - Thorsten Heinze (Thorsten.Heinze@openBackhaul.com)
-- 0.1.0-tsp.190131.1551+overview.1 : [190131 EthernetMacPacCD.PNG](./190131%20EthernetMacPacCD.PNG)
+- [MacInterface_1.0.0-tsp.190509.2000+overview.1](./MacInterface_1.0.0-tsp.190509.2000+overview.1.png)
 
 ### List of Classes
 - Waseem Sattar (Waseem.Sattar@openBackhaul.com)
-- to be provided 
+- 
 
 ### GenDoc Export
 - Thorsten Heinze (Thorsten.Heinze@openBackhaul.com)
-- 0.1.0-tsp.190131.1551+gendoc.1 : [EthernetMacPac_0.1.0-tsp.190131.1551+gendoc.2019-01-31-181741.docx](./EthernetMacPac_0.1.0-tsp.190131.1551+gendoc.2019-01-31-181741.docx)
+- [MacInterface_1.0.0-tsp.190509.2000+gendoc.1](./MacInterface_1.0.0-tsp.190509.2000+gendoc.1.docx)
 
 ### YANG File
-- Kranti Appari (Kranti.Appari@openBackhaul.com)
 - to be provided
 
 ### Interface Simulator
