@@ -3,7 +3,7 @@ Technology specific interface definition for Ethernet MAC interfaces according t
 
 ### Branch
 - Thorsten Heinze (Thorsten.Heinze@openBackhaul.com)
-- 0.1.0-tsp.d.t : Use case driven model for the Transport SDN Pilot at Telefonica Germany
+- 1.0.0-tsp.d.t : Use case driven model for the Transport SDN Pilot at Telefonica Germany
 
 ### UML
 - Thorsten Heinze (Thorsten.Heinze@openBackhaul.com)
