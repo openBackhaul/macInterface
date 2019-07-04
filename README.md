@@ -15,11 +15,18 @@ Technology specific interface definition for Ethernet MAC interfaces according t
 
 ### List of Classes
 - Waseem Sattar (Waseem.Sattar@openBackhaul.com)
-- 
+- to be provided
 
 ### GenDoc Export
 - Thorsten Heinze (Thorsten.Heinze@openBackhaul.com)
 - [MacInterface_1.0.0-tsp.190509.2000+gendoc.1](./MacInterface_1.0.0-tsp.190509.2000+gendoc.1.docx)
+
+### Augmentation Condition
+- When statement in Augmentation statement demands for LayerProtocol::layerProtocolName==MAC_INTERFACE
+
+### YANG Header
+- Thorsten Heinze (Thorsten.Heinze@openBackhaul.com)
+- to be provided
 
 ### YANG File
 - to be provided
