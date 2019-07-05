@@ -22,7 +22,7 @@ Technology specific interface definition for Ethernet MAC interfaces according t
 - [MacInterface_1.0.0-tsp.190704.1750+gendoc.1](./MacInterface_1.0.0-tsp.190704.1750+gendoc.1.docx)
 
 ### Augmentation Condition
-- When statement in Augmentation statement demands for LayerProtocol::layerProtocolName==MAC_INTERFACE
+- When statement in Augmentation statement demands for LayerProtocol::layerProtocolName==LAYER_PROTOCOL_NAME_MAC_LAYER
 
 ### YANG File
 - to be provided
