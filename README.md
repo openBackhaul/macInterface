@@ -24,10 +24,6 @@ Technology specific interface definition for Ethernet MAC interfaces according t
 ### Augmentation Condition
 - When statement in Augmentation statement demands for LayerProtocol::layerProtocolName==MAC_INTERFACE
 
-### YANG Header
-- Thorsten Heinze (Thorsten.Heinze@openBackhaul.com)
-- to be provided
-
 ### YANG File
 - to be provided
 
