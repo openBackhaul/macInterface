@@ -26,7 +26,8 @@ Technology specific interface definition for Ethernet MAC interfaces according t
 
 ### YANG File
 - Waseem Sattar (Waseem.Sattar@openBackhaul.com)
-- [MacInterface_1.0.0-tsp.190711.1725+yang.1](./MacInterface_1.0.0-tsp.190711.1725+yang.1.zip)
+- [MacInterface_1.0.0-tsp.190711.1725+yang.3](./MacInterface_1.0.0-tsp.190711.1725+yang.3.zip)
+- In differgence to MacInterface_1.0.0-tsp.190711.1725 [Issue#9](../../issues/9) has been fixed
 
 ### Interface Simulator
 - not planned 
