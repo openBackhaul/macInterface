@@ -1,48 +1,41 @@
 # macInterface
-Technology specific interface definition for Ethernet MAC interfaces according to IEEE 802.1
+- Technology specific interface definition for Ethernet MAC interfaces according to IEEE 802.1
+- Thorsten Heinze (Thorsten.Heinze@openBackhaul.com)
 
 ### Branch
-- Thorsten Heinze (Thorsten.Heinze@openBackhaul.com)
 - 1.0.0-tsp.d.t : Use case driven model for the Transport SDN Pilot at Telefonica Germany
 
 ### UML
-- Thorsten Heinze (Thorsten.Heinze@openBackhaul.com)
-- [MacInterface_1.0.0-tsp.190711.1725](./MacInterface_1.0.0-tsp.190711.1725.zip)
+- [MacInterface_1.0.0-tsp.200123.1415](./MacInterface_1.0.0-tsp.200123.1415.zip)
 
 ### Overview 
-- Thorsten Heinze (Thorsten.Heinze@openBackhaul.com)
-- [MacInterface_1.0.0-tsp.190711.1725+overview.1](./MacInterface_1.0.0-tsp.190711.1725+overview.1.png)
-
-### List of Classes
-- Waseem Sattar (Waseem.Sattar@openBackhaul.com)
-- to be provided
+- [MacInterface_1.0.0-tsp.200123.1415+overview.1](./MacInterface_1.0.0-tsp.200123.1415+overview.1.png)
 
 ### GenDoc Export
-- Thorsten Heinze (Thorsten.Heinze@openBackhaul.com)
-- [MacInterface_1.0.0-tsp.190711.1725+gendoc.1](./MacInterface_1.0.0-tsp.190711.1725+gendoc.1.docx)
+- [MacInterface_1.0.0-tsp.200123.1415+gendoc.1](./MacInterface_1.0.0-tsp.200123.1415+gendoc.1.docx)
 
 ### Augmentation Condition
 - When statement in Augmentation statement demands for LayerProtocol::layerProtocolName==LAYER_PROTOCOL_NAME_TYPE_MAC_LAYER
 
 ### YANG File
-- Waseem Sattar (Waseem.Sattar@openBackhaul.com)
-- [MacInterface_1.0.0-tsp.190711.1725+yang.4](./MacInterface_1.0.0-tsp.190711.1725+yang.4.zip)
-- In differgence to MacInterface_1.0.0-tsp.190711.1725 [Issue#9](../../issues/9) and [Issue#10](../../issues/10) have been fixed
+- [MacInterface_1.0.0-tsp.200123.1415+yang.2](./MacInterface_1.0.0-tsp.200123.1415+yang.2.zip)
+
+### JSON Schema
+- to be provided
 
 ### Interface Simulator
-- not planned 
+- to be provided
 
 ### Interface Validator
-- not planned
+- to be provided
 
 ### Publication
-- not planned
+- Candidate for ONF TR-532 v2.0 
 
-### Model Classification
-- Trial
+### Aspired Model Classification
+- Live Network
 
 ### Open Issue List
-- Thorsten Heinze (Thorsten.Heinze@openBackhaul.com)
 - [macInterface/issues](../../issues)
 
 ### Comments
