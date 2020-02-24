@@ -18,7 +18,7 @@
 - When statement in Augmentation statement demands for LayerProtocol::layerProtocolName==LAYER_PROTOCOL_NAME_TYPE_MAC_LAYER
 
 ### YANG File
-- [MacInterface_1.0.0-tsp.200123.1415+yang.2](./MacInterface_1.0.0-tsp.200123.1415+yang.2.zip)
+- [MacInterface_1.0.0-tsp.200123.1415+yang.3](./MacInterface_1.0.0-tsp.200123.1415+yang.3.zip)
 
 ### JSON Schema
 - to be provided
