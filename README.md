@@ -7,12 +7,15 @@
 
 ### UML
 - [MacInterface_1.0.0-tsp.200123.1415](./MacInterface_1.0.0-tsp.200123.1415.zip)
+- [MacInterface_1.0.0-tsp.220314.1200](./MacInterface_1.0.0-tsp.220314.1200.zip)
 
 ### Overview 
 - [MacInterface_1.0.0-tsp.200123.1415+overview.1](./MacInterface_1.0.0-tsp.200123.1415+overview.1.png)
+- [MacInterface_1.0.0-tsp.220314.1200+overview.1](./MacInterface_1.0.0-tsp.220314.1200+overview.1.png)
 
 ### GenDoc Export
 - [MacInterface_1.0.0-tsp.200123.1415+gendoc.1](./MacInterface_1.0.0-tsp.200123.1415+gendoc.1.docx)
+- [MacInterface_1.0.0-tsp.220314.1200+gendoc.1](./MacInterface_1.0.0-tsp.220314.1200+gendoc.1.docx)
 
 ### Augmentation Condition
 - When statement in Augmentation statement demands for LayerProtocol::layerProtocolName==LAYER_PROTOCOL_NAME_TYPE_MAC_LAYER
