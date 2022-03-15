@@ -6,23 +6,23 @@
 - 1.0.0-tsp.d.t : Use case driven model for the Transport SDN Pilot at Telefonica Germany
 
 ### UML
-- [MacInterface_1.0.0-tsp.200123.1415](./MacInterface_1.0.0-tsp.200123.1415.zip)
+- [MacInterface_1.0.0-tsp.200123.1415](./MacInterface_1.0.0-tsp.200123.1415.zip) (deprecated)
 - [MacInterface_1.0.0-tsp.220314.1200](./MacInterface_1.0.0-tsp.220314.1200.zip)
 
 ### Overview 
-- [MacInterface_1.0.0-tsp.200123.1415+overview.1](./MacInterface_1.0.0-tsp.200123.1415+overview.1.png)
+- [MacInterface_1.0.0-tsp.200123.1415+overview.1](./MacInterface_1.0.0-tsp.200123.1415+overview.1.png) (deprecated)
 - [MacInterface_1.0.0-tsp.220314.1200+overview.1](./MacInterface_1.0.0-tsp.220314.1200+overview.1.png)
 
 ### GenDoc Export
-- [MacInterface_1.0.0-tsp.200123.1415+gendoc.1](./MacInterface_1.0.0-tsp.200123.1415+gendoc.1.docx)
+- [MacInterface_1.0.0-tsp.200123.1415+gendoc.1](./MacInterface_1.0.0-tsp.200123.1415+gendoc.1.docx) (deprecated)
 - [MacInterface_1.0.0-tsp.220314.1200+gendoc.1](./MacInterface_1.0.0-tsp.220314.1200+gendoc.1.docx)
 
 ### Augmentation Condition
 - When statement in Augmentation statement demands for LayerProtocol::layerProtocolName==LAYER_PROTOCOL_NAME_TYPE_MAC_LAYER
 
 ### YANG File
-- [MacInterface_1.0.0-tsp.200123.1415+yang.4](./MacInterface_1.0.0-tsp.200123.1415+yang.4.zip)
-
+- [MacInterface_1.0.0-tsp.200123.1415+yang.4](./MacInterface_1.0.0-tsp.200123.1415+yang.4.zip) (deprecated)
+- [MacInterface_1.0.0-tsp.220314.1200+yang.1](./MacInterface_1.0.0-tsp.220314.1200+yang.1.zip)
 ### JSON Schema
 - to be provided
 
