@@ -26,6 +26,7 @@
 ### YANG File
 - [MacInterface_1.0.0-tsp.200123.1415+yang.4](./MacInterface_1.0.0-tsp.200123.1415+yang.4.zip) (deprecated)
 - [MacInterface_1.0.0-tsp.220314.1200+yang.1](./MacInterface_1.0.0-tsp.220314.1200+yang.1.zip) (deprecated)
+- [MacInterface_1.0.0-tsp.220324.1035+yang.1](./MacInterface_1.0.0-tsp.220324.1035+yang.1.zip)
 
 ### JSON Schema
 - to be provided
