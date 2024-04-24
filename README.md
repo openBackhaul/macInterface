@@ -26,7 +26,7 @@
 - to be provided
 
 ### Interface Validator
-- to be provided
+- [MacInterface_1.0.0-tsi.240105.1030+validator.1](./MacInterface_1.0.0-tsi.240105.1030+validator.1.zip)
 
 ### Publication
 - Candidate for ONF TR-532 v2.0 
