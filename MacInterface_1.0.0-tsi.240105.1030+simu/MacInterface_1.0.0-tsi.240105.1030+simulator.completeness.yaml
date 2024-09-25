@@ -1,0 +1,1107 @@
+openapi: 3.0.1
+info:
+  title: MacInterface_1.0.0-tsi.240105.1030+simulator
+  version: 1.0.0
+
+paths:
+########################################################################################################################
+#   MacInterface_1.0.0-tsi.240105.1030+validator.completeness in static reference mode
+########################################################################################################################
+#
+# At Application
+# ==============
+#
+# Preparation => MountName=305250001, UUID=macInt1, LocalID=1
+  /core-model-1-4:network-control-domain=cache/control-construct=305250001:
+    parameters:
+      - $ref: '#/components/parameters/user'
+      - $ref: '#/components/parameters/originator'
+      - $ref: '#/components/parameters/x-correlator'
+      - $ref: '#/components/parameters/trace-indicator'
+      - $ref: '#/components/parameters/customer-journey'
+      - $ref: '#/components/parameters/mountName'
+      - $ref: '#/components/parameters/fields'
+    get:
+      operationId: getLtpList
+      summary: 'Provides list of LTPs from cache'
+      tags:
+        - IndividualServices
+      security:
+        - apiKeyAuth: []
+      responses:
+        '200':
+          description: 'List of LTPs provided from cache'
+          content:
+            application/json:
+              schema:
+                type: object
+                required:
+                  - core-model-1-4:control-construct
+                properties:
+                  core-model-1-4:control-construct:
+                    type: array
+                    items:
+                      type: object
+                      required:
+                        - logical-termination-point
+                      properties:
+                        logical-termination-point:
+                          type: array
+                          items:
+                            type: object
+                            required:
+                              - uuid
+                              - layer-protocol
+                            properties:
+                              uuid:
+                                type: string
+                                enum:
+                                  - 'macInt1'
+                              layer-protocol:
+                                type: array
+                                items:
+                                  type: object
+                                  required:
+                                    - local-id
+                                    - layer-protocol-name
+                                  properties:
+                                    local-id:
+                                      type: string
+                                      enum:
+                                        - '1'
+                                    layer-protocol-name:
+                                      type: string
+                                      enum:
+                                        - 'mac-interface-1-0:LAYER_PROTOCOL_NAME_TYPE_MAC_LAYER'
+                example:
+                  core-model-1-4:control-construct:
+                    - logical-termination-point:
+                        - uuid: 'macInt1'
+                          layer-protocol:
+                            - local-id: '1'
+                              layer-protocol-name: 'mac-interface-1-0:LAYER_PROTOCOL_NAME_TYPE_MAC_LAYER'
+          headers:
+            x-correlator:
+              $ref: '#/components/headers/x-correlator'
+            exec-time:
+              $ref: '#/components/headers/exec-time'
+            backend-time:
+              $ref: '#/components/headers/backend-time'
+            life-cycle-state:
+              $ref: '#/components/headers/life-cycle-state'
+  
+# Completeness of GET 200
+  /core-model-1-4:network-control-domain=cache/control-construct=305250001/logical-termination-point=macInt1/layer-protocol=1/mac-interface-1-0:mac-interface-pac/mac-interface-capability:
+    parameters:
+      - $ref: '#/components/parameters/user'
+      - $ref: '#/components/parameters/originator'
+      - $ref: '#/components/parameters/x-correlator'
+      - $ref: '#/components/parameters/trace-indicator'
+      - $ref: '#/components/parameters/customer-journey'
+      - $ref: '#/components/parameters/mountName'
+      - $ref: '#/components/parameters/uuid'
+      - $ref: '#/components/parameters/localId'
+      - $ref: '#/components/parameters/fields'
+    get:
+      operationId: getCachedMacInterfaceCapability
+      summary: 'Provides MacInterfaceCapability from cache'
+      tags:
+        - IndividualServices
+      security:
+        - apiKeyAuth: []
+      responses:
+        '200':
+          description: 'MacInterfaceCapability provided from cache'
+          content:
+            application/json:
+              schema:
+                type: object
+                required:
+                  - mac-interface-1-0:mac-interface-capability
+                properties:
+                  mac-interface-1-0:mac-interface-capability:
+                    $ref: '#/components/schemas/mac-interface-capability'
+                example:
+                  mac-interface-1-0:mac-interface-capability:
+                    hardware-mac-address: '78:fa:d7:7e:3e:41'
+                    mac-address-configuration-is-avail: true
+                    supported-maximum-frame-size-list:
+                      - 1518
+                      - 2048
+                      - 9216
+                      - 9600
+                      - 10240
+                    supported-frame-format-list:
+                      - 'mac-interface-1-0:FRAME_FORMAT_TYPE_ETHERNET_2'
+                    supported-flow-control-mode-list:
+                      - 'mac-interface-1-0:FLOW_CONTROL_MODE_TYPE_RECEIVE_ONLY'
+                      - 'mac-interface-1-0:FLOW_CONTROL_MODE_TYPE_SEND_ONLY'
+                      - 'mac-interface-1-0:FLOW_CONTROL_MODE_TYPE_SEND_AND_RECEIVE'
+                      - 'mac-interface-1-0:FLOW_CONTROL_MODE_TYPE_NONE'
+                    link-loss-forwarding-is-avail: true
+                    supported-link-loss-forwarding-delay-list:
+                      - 20
+                      - 30
+                      - 40
+                      - 50
+                      - 60
+                    broadcast-frame-suppression-is-avail: true
+                    loop-port-shut-down-is-avail: true
+                    loop-detection-is-avail: true
+                    admin-shut-down-is-avail: true
+                    supported-loop-back-kind-list:
+                      - 'mac-interface-1-0:LOOP_BACK_TYPE_BACK_TO_LOCAL'
+                      - 'mac-interface-1-0:LOOP_BACK_TYPE_NONE'
+                    maintenance-timer-range: '0-172800'
+                    statistics-is-avail: true
+          headers:
+            x-correlator:
+              $ref: '#/components/headers/x-correlator'
+            exec-time:
+              $ref: '#/components/headers/exec-time'
+            backend-time:
+              $ref: '#/components/headers/backend-time'
+            life-cycle-state:
+              $ref: '#/components/headers/life-cycle-state'
+  /core-model-1-4:network-control-domain=cache/control-construct=305250001/logical-termination-point=macInt1/layer-protocol=1/mac-interface-1-0:mac-interface-pac/mac-interface-configuration:
+    parameters:
+      - $ref: '#/components/parameters/user'
+      - $ref: '#/components/parameters/originator'
+      - $ref: '#/components/parameters/x-correlator'
+      - $ref: '#/components/parameters/trace-indicator'
+      - $ref: '#/components/parameters/customer-journey'
+      - $ref: '#/components/parameters/mountName'
+      - $ref: '#/components/parameters/uuid'
+      - $ref: '#/components/parameters/localId'
+      - $ref: '#/components/parameters/fields'
+    get:
+      operationId: getCachedMacInterfaceConfiguration
+      summary: 'Provides MacInterfaceConfiguration from cache'
+      tags:
+        - IndividualServices
+      security:
+        - apiKeyAuth: []
+      responses:
+        '200':
+          description: 'MacInterfaceConfiguration provided from cache'
+          content:
+            application/json:
+              schema:
+                type: object
+                required:
+                  - mac-interface-1-0:mac-interface-configuration
+                properties:
+                  mac-interface-1-0:mac-interface-configuration:
+                    $ref: '#/components/schemas/mac-interface-configuration'
+                example:
+                  mac-interface-1-0:mac-interface-configuration:
+                    interface-name: 'MacInterfaceName'
+                    mac-address-configuration-is-on: true
+                    configured-mac-address: '70:45:ae:7a:c7:4c'
+                    maximum-frame-size: 9216
+                    fragmentation-allowed: 'mac-interface-1-0:FRAGMENTATION_TYPE_DISABLE'
+                    transmitted-frame-format: 'mac-interface-1-0:FRAME_FORMAT_TYPE_ETHERNET_2'
+                    flow-control-mode: 'mac-interface-1-0:FLOW_CONTROL_MODE_TYPE_SEND_AND_RECEIVE'
+                    link-loss-forwarding-is-on: true
+                    link-loss-forwarding-delay: 20
+                    broadcast-frame-suppression-is-on: true
+                    maximum-share-of-broadcast-frames: 0
+                    loop-port-shut-down-is-on: true
+                    loop-detection-is-on: true
+                    loop-back-kind-on: 'mac-interface-1-0:LOOP_BACK_TYPE_NONE'
+                    maintenance-timer: 0
+                    statistics-is-on: true
+          headers:
+            x-correlator:
+              $ref: '#/components/headers/x-correlator'
+            exec-time:
+              $ref: '#/components/headers/exec-time'
+            backend-time:
+              $ref: '#/components/headers/backend-time'
+            life-cycle-state:
+              $ref: '#/components/headers/life-cycle-state'
+  /core-model-1-4:network-control-domain=cache/control-construct=305250001/logical-termination-point=macInt1/layer-protocol=1/mac-interface-1-0:mac-interface-pac/mac-interface-status:
+    parameters:
+      - $ref: '#/components/parameters/user'
+      - $ref: '#/components/parameters/originator'
+      - $ref: '#/components/parameters/x-correlator'
+      - $ref: '#/components/parameters/trace-indicator'
+      - $ref: '#/components/parameters/customer-journey'
+      - $ref: '#/components/parameters/mountName'
+      - $ref: '#/components/parameters/uuid'
+      - $ref: '#/components/parameters/localId'
+      - $ref: '#/components/parameters/fields'
+    get:
+      operationId: getCachedMacInterfaceStatus
+      summary: 'Provides MacInterfaceStatus from cache'
+      tags:
+        - IndividualServices
+      security:
+        - apiKeyAuth: []
+      responses:
+        '200':
+          description: 'MacInterfaceStatus provided from cache'
+          content:
+            application/json:
+              schema:
+                type: object
+                required:
+                  - mac-interface-1-0:mac-interface-status
+                properties:
+                  mac-interface-1-0:mac-interface-status:
+                    $ref: '#/components/schemas/mac-interface-status'
+                example:
+                  mac-interface-1-0:mac-interface-status:
+                    interface-status: 'mac-interface-1-0:INTERFACE_STATUS_TYPE_UP'
+                    mac-address-cur: '70:45:ae:7a:c7:4c'
+                    received-ethernet-frame-format-cur: 'mac-interface-1-0:FRAME_FORMAT_TYPE_ETHERNET_2'
+                    flow-control-mode-cur: 'mac-interface-1-0:FLOW_CONTROL_MODE_TYPE_SEND_AND_RECEIVE'
+                    loop-detection-result: 'mac-interface-1-0:LOOP_DETECTION_RESULT_TYPE_NO_LOOP_DETECTED'
+                    loop-back-kind-up: 'mac-interface-1-0:LOOP_BACK_TYPE_NONE'
+                    statistics-is-up: true
+                    timestamp: '2010-11-20T14:00:00+01:00'
+                    last-10-sec-frame-input-rate: -1
+                    last-10-sec-frame-output-rate: -1
+                    oversized-frames-ingress: '-1'
+                    undersized-frames-ingress: '-1'
+                    jabber-frames-ingress: '-1'
+                    fragmented-frames-ingress: '-1'
+                    unknown-protocol-frames-input: '0'
+          headers:
+            x-correlator:
+              $ref: '#/components/headers/x-correlator'
+            exec-time:
+              $ref: '#/components/headers/exec-time'
+            backend-time:
+              $ref: '#/components/headers/backend-time'
+            life-cycle-state:
+              $ref: '#/components/headers/life-cycle-state'
+
+
+#
+# At Controller (copy from above, different paths, less parameters, basicAuth, no headers)
+# =============
+#
+# Preparation => MountName=305250001, UUID=macInt1, LocalID=1
+  /rests/data/network-topology:network-topology/topology=topology-netconf/node=305250001/yang-ext:mount/core-model-1-4:control-construct:
+    parameters:
+      - $ref: '#/components/parameters/mountName'
+      - $ref: '#/components/parameters/fields'
+    get:
+      operationId: getLtpList
+      summary: 'Provides list of LTPs from device'
+      tags:
+        - IndividualServices
+      security:
+        - basicAuth: []
+      responses:
+        '200':
+          description: 'List of LTPs provided from device'
+          content:
+            application/json:
+              schema:
+                type: object
+                required:
+                  - core-model-1-4:control-construct
+                properties:
+                  core-model-1-4:control-construct:
+                    type: object
+                    required:
+                      - logical-termination-point
+                    properties:
+                      logical-termination-point:
+                        type: array
+                        items:
+                          type: object
+                          required:
+                            - uuid
+                            - layer-protocol
+                          properties:
+                            uuid:
+                              type: string
+                              enum:
+                                - 'macInt1'
+                            layer-protocol:
+                              type: array
+                              items:
+                                type: object
+                                required:
+                                  - local-id
+                                  - layer-protocol-name
+                                properties:
+                                  local-id:
+                                    type: string
+                                    enum:
+                                      - '1'
+                                  layer-protocol-name:
+                                    type: string
+                                    enum:
+                                      - 'mac-interface-1-0:LAYER_PROTOCOL_NAME_TYPE_MAC_LAYER'
+                example:
+                  core-model-1-4:control-construct:
+                    logical-termination-point:
+                      - uuid: 'macInt1'
+                        layer-protocol:
+                          - local-id: '1'
+                            layer-protocol-name: 'mac-interface-1-0:LAYER_PROTOCOL_NAME_TYPE_MAC_LAYER'
+
+# Completeness of GET 200
+  /rests/data/network-topology:network-topology/topology=topology-netconf/node=305250001/yang-ext:mount/core-model-1-4:control-construct/logical-termination-point=macInt1/layer-protocol=1/mac-interface-1-0:mac-interface-pac/mac-interface-capability:
+    parameters:
+      - $ref: '#/components/parameters/mountName'
+      - $ref: '#/components/parameters/uuid'
+      - $ref: '#/components/parameters/localId'
+      - $ref: '#/components/parameters/fields'
+    get:
+      operationId: getLiveMacInterfaceCapability
+      summary: 'Provides MacInterfaceCapability from device'
+      tags:
+        - IndividualServices
+      security:
+        - basicAuth: []
+      responses:
+        '200':
+          description: 'MacInterfaceCapability provided from device'
+          content:
+            application/json:
+              schema:
+                type: object
+                required:
+                  - mac-interface-1-0:mac-interface-capability
+                properties:
+                  mac-interface-1-0:mac-interface-capability:
+                    $ref: '#/components/schemas/mac-interface-capability'
+                example:
+                  mac-interface-1-0:mac-interface-capability:
+                    hardware-mac-address: '78:fa:d7:7e:3e:41'
+                    mac-address-configuration-is-avail: true
+                    supported-maximum-frame-size-list:
+                      - 1518
+                      - 2048
+                      - 9216
+                      - 9600
+                      - 10240
+                    supported-frame-format-list:
+                      - 'mac-interface-1-0:FRAME_FORMAT_TYPE_ETHERNET_2'
+                    supported-flow-control-mode-list:
+                      - 'mac-interface-1-0:FLOW_CONTROL_MODE_TYPE_RECEIVE_ONLY'
+                      - 'mac-interface-1-0:FLOW_CONTROL_MODE_TYPE_SEND_ONLY'
+                      - 'mac-interface-1-0:FLOW_CONTROL_MODE_TYPE_SEND_AND_RECEIVE'
+                      - 'mac-interface-1-0:FLOW_CONTROL_MODE_TYPE_NONE'
+                    link-loss-forwarding-is-avail: true
+                    supported-link-loss-forwarding-delay-list:
+                      - 20
+                      - 30
+                      - 40
+                      - 50
+                      - 60
+                    broadcast-frame-suppression-is-avail: true
+                    loop-port-shut-down-is-avail: true
+                    loop-detection-is-avail: true
+                    admin-shut-down-is-avail: true
+                    supported-loop-back-kind-list:
+                      - 'mac-interface-1-0:LOOP_BACK_TYPE_BACK_TO_LOCAL'
+                      - 'mac-interface-1-0:LOOP_BACK_TYPE_NONE'
+                    maintenance-timer-range: '0-172800'
+                    statistics-is-avail: true
+  /rests/data/network-topology:network-topology/topology=topology-netconf/node=305250001/yang-ext:mount/core-model-1-4:control-construct/logical-termination-point=macInt1/layer-protocol=1/mac-interface-1-0:mac-interface-pac/mac-interface-configuration:
+    parameters:
+      - $ref: '#/components/parameters/mountName'
+      - $ref: '#/components/parameters/uuid'
+      - $ref: '#/components/parameters/localId'
+      - $ref: '#/components/parameters/fields'
+    get:
+      operationId: getLiveMacInterfaceConfiguration
+      summary: 'Provides MacInterfaceConfiguration from device'
+      tags:
+        - IndividualServices
+      security:
+        - basicAuth: []
+      responses:
+        '200':
+          description: 'MacInterfaceConfiguration provided from device'
+          content:
+            application/json:
+              schema:
+                type: object
+                required:
+                  - mac-interface-1-0:mac-interface-configuration
+                properties:
+                  mac-interface-1-0:mac-interface-configuration:
+                    $ref: '#/components/schemas/mac-interface-configuration'
+                example:
+                  mac-interface-1-0:mac-interface-configuration:
+                    interface-name: 'MacInterfaceName'
+                    mac-address-configuration-is-on: true
+                    configured-mac-address: '70:45:ae:7a:c7:4c'
+                    maximum-frame-size: 9216
+                    fragmentation-allowed: 'mac-interface-1-0:FRAGMENTATION_TYPE_DISABLE'
+                    transmitted-frame-format: 'mac-interface-1-0:FRAME_FORMAT_TYPE_ETHERNET_2'
+                    flow-control-mode: 'mac-interface-1-0:FLOW_CONTROL_MODE_TYPE_SEND_AND_RECEIVE'
+                    link-loss-forwarding-is-on: true
+                    link-loss-forwarding-delay: 20
+                    broadcast-frame-suppression-is-on: true
+                    maximum-share-of-broadcast-frames: 0
+                    loop-port-shut-down-is-on: true
+                    loop-detection-is-on: true
+                    loop-back-kind-on: 'mac-interface-1-0:LOOP_BACK_TYPE_NONE'
+                    maintenance-timer: 0
+                    statistics-is-on: true
+  /rests/data/network-topology:network-topology/topology=topology-netconf/node=305250001/yang-ext:mount/core-model-1-4:control-construct/logical-termination-point=macInt1/layer-protocol=1/mac-interface-1-0:mac-interface-pac/mac-interface-status:
+    parameters:
+      - $ref: '#/components/parameters/mountName'
+      - $ref: '#/components/parameters/uuid'
+      - $ref: '#/components/parameters/localId'
+      - $ref: '#/components/parameters/fields'
+    get:
+      operationId: getLiveMacInterfaceStatus
+      summary: 'Provides MacInterfaceStatus from device'
+      tags:
+        - IndividualServices
+      security:
+        - basicAuth: []
+      responses:
+        '200':
+          description: 'MacInterfaceStatus provided from device'
+          content:
+            application/json:
+              schema:
+                type: object
+                required:
+                  - mac-interface-1-0:mac-interface-status
+                properties:
+                  mac-interface-1-0:mac-interface-status:
+                    $ref: '#/components/schemas/mac-interface-status'
+                example:
+                  mac-interface-1-0:mac-interface-status:
+                    interface-status: 'mac-interface-1-0:INTERFACE_STATUS_TYPE_UP'
+                    mac-address-cur: '70:45:ae:7a:c7:4c'
+                    received-ethernet-frame-format-cur: 'mac-interface-1-0:FRAME_FORMAT_TYPE_ETHERNET_2'
+                    flow-control-mode-cur: 'mac-interface-1-0:FLOW_CONTROL_MODE_TYPE_SEND_AND_RECEIVE'
+                    loop-detection-result: 'mac-interface-1-0:LOOP_DETECTION_RESULT_TYPE_NO_LOOP_DETECTED'
+                    loop-back-kind-up: 'mac-interface-1-0:LOOP_BACK_TYPE_NONE'
+                    statistics-is-up: true
+                    timestamp: '2010-11-20T14:00:00+01:00'
+                    last-10-sec-frame-input-rate: -1
+                    last-10-sec-frame-output-rate: -1
+                    oversized-frames-ingress: '-1'
+                    undersized-frames-ingress: '-1'
+                    jabber-frames-ingress: '-1'
+                    fragmented-frames-ingress: '-1'
+                    unknown-protocol-frames-input: '0'
+
+
+########################################################################################################################
+#   Generic Paths
+########################################################################################################################
+  /generic/core-model-1-4:network-control-domain=cache/control-construct={mountName}/logical-termination-point={uuid}/layer-protocol={localId}/mac-interface-1-0:mac-interface-pac/mac-interface-capability:
+    parameters:
+      - $ref: '#/components/parameters/user'
+      - $ref: '#/components/parameters/originator'
+      - $ref: '#/components/parameters/x-correlator'
+      - $ref: '#/components/parameters/trace-indicator'
+      - $ref: '#/components/parameters/customer-journey'
+      - $ref: '#/components/parameters/mountName'
+      - $ref: '#/components/parameters/uuid'
+      - $ref: '#/components/parameters/localId'
+      - $ref: '#/components/parameters/fields'
+    get:
+      operationId: getCachedMacInterfaceCapability
+      summary: 'Provides MacInterfaceCapability from cache'
+      tags:
+        - IndividualServices
+      security:
+        - apiKeyAuth: []
+      responses:
+        '200':
+          description: 'MacInterfaceCapability provided from cache'
+          content:
+            application/json:
+              schema:
+                type: object
+                required:
+                  - mac-interface-1-0:mac-interface-capability
+                properties:
+                  mac-interface-1-0:mac-interface-capability:
+                    $ref: '#/components/schemas/mac-interface-capability'
+                example:
+                  mac-interface-1-0:mac-interface-capability:
+                    hardware-mac-address: '00:00:00:00:00:00'
+                    mac-address-configuration-is-avail: true
+                    supported-maximum-frame-size-list:
+                      - 0
+                    supported-frame-format-list:
+                      - 'mac-interface-1-0:FRAME_FORMAT_TYPE_ETHERNET_2'
+                    supported-flow-control-mode-list:
+                      - 'mac-interface-1-0:FLOW_CONTROL_MODE_TYPE_NONE'
+                    link-loss-forwarding-is-avail: true
+                    supported-link-loss-forwarding-delay-list:
+                      - 0
+                    broadcast-frame-suppression-is-avail: true
+                    loop-port-shut-down-is-avail: true
+                    loop-detection-is-avail: true
+                    admin-shut-down-is-avail: true
+                    supported-loop-back-kind-list:
+                      - 'mac-interface-1-0:LOOP_BACK_TYPE_NONE'
+                    maintenance-timer-range: 'string'
+                    statistics-is-avail: true
+          headers:
+            x-correlator:
+              $ref: '#/components/headers/x-correlator'
+            exec-time:
+              $ref: '#/components/headers/exec-time'
+            backend-time:
+              $ref: '#/components/headers/backend-time'
+            life-cycle-state:
+              $ref: '#/components/headers/life-cycle-state'
+        '4XX':
+          $ref: '#/components/responses/responseForErroredServiceRequests'
+        '500':
+          $ref: '#/components/responses/responseForErroredServiceRequests'
+        default:
+          $ref: '#/components/responses/responseForErroredServiceRequests'
+  /generic/core-model-1-4:network-control-domain=cache/control-construct={mountName}/logical-termination-point={uuid}/layer-protocol={localId}/mac-interface-1-0:mac-interface-pac/mac-interface-configuration:
+    parameters:
+      - $ref: '#/components/parameters/user'
+      - $ref: '#/components/parameters/originator'
+      - $ref: '#/components/parameters/x-correlator'
+      - $ref: '#/components/parameters/trace-indicator'
+      - $ref: '#/components/parameters/customer-journey'
+      - $ref: '#/components/parameters/mountName'
+      - $ref: '#/components/parameters/uuid'
+      - $ref: '#/components/parameters/localId'
+      - $ref: '#/components/parameters/fields'
+    get:
+      operationId: getCachedMacInterfaceConfiguration
+      summary: 'Provides MacInterfaceConfiguration from cache'
+      tags:
+        - IndividualServices
+      security:
+        - apiKeyAuth: []
+      responses:
+        '200':
+          description: 'MacInterfaceConfiguration provided from cache'
+          content:
+            application/json:
+              schema:
+                type: object
+                required:
+                  - mac-interface-1-0:mac-interface-configuration
+                properties:
+                  mac-interface-1-0:mac-interface-configuration:
+                    $ref: '#/components/schemas/mac-interface-configuration'
+                example:
+                  mac-interface-1-0:mac-interface-configuration:
+                    interface-name: 'string'
+                    mac-address-configuration-is-on: true
+                    configured-mac-address: '00:00:00:00:00:00'
+                    maximum-frame-size: 0
+                    fragmentation-allowed: 'mac-interface-1-0:FRAGMENTATION_TYPE_DISABLE'
+                    transmitted-frame-format: 'mac-interface-1-0:FRAME_FORMAT_TYPE_ETHERNET_2'
+                    flow-control-mode: 'mac-interface-1-0:FLOW_CONTROL_MODE_TYPE_NONE'
+                    link-loss-forwarding-is-on: true
+                    link-loss-forwarding-delay: 0
+                    broadcast-frame-suppression-is-on: true
+                    maximum-share-of-broadcast-frames: 0
+                    loop-port-shut-down-is-on: true
+                    loop-detection-is-on: true
+                    loop-back-kind-on: 'mac-interface-1-0:LOOP_BACK_TYPE_NONE'
+                    maintenance-timer: 0
+                    statistics-is-on: true
+          headers:
+            x-correlator:
+              $ref: '#/components/headers/x-correlator'
+            exec-time:
+              $ref: '#/components/headers/exec-time'
+            backend-time:
+              $ref: '#/components/headers/backend-time'
+            life-cycle-state:
+              $ref: '#/components/headers/life-cycle-state'
+        '4XX':
+          $ref: '#/components/responses/responseForErroredServiceRequests'
+        '500':
+          $ref: '#/components/responses/responseForErroredServiceRequests'
+        default:
+          $ref: '#/components/responses/responseForErroredServiceRequests'
+  /generic/core-model-1-4:network-control-domain=cache/control-construct={mountName}/logical-termination-point={uuid}/layer-protocol={localId}/mac-interface-1-0:mac-interface-pac/mac-interface-status:
+    parameters:
+      - $ref: '#/components/parameters/user'
+      - $ref: '#/components/parameters/originator'
+      - $ref: '#/components/parameters/x-correlator'
+      - $ref: '#/components/parameters/trace-indicator'
+      - $ref: '#/components/parameters/customer-journey'
+      - $ref: '#/components/parameters/mountName'
+      - $ref: '#/components/parameters/uuid'
+      - $ref: '#/components/parameters/localId'
+      - $ref: '#/components/parameters/fields'
+    get:
+      operationId: getCachedMacInterfaceStatus
+      summary: 'Provides MacInterfaceStatus from cache'
+      tags:
+        - IndividualServices
+      security:
+        - apiKeyAuth: []
+      responses:
+        '200':
+          description: 'MacInterfaceStatus provided from cache'
+          content:
+            application/json:
+              schema:
+                type: object
+                required:
+                  - mac-interface-1-0:mac-interface-status
+                properties:
+                  mac-interface-1-0:mac-interface-status:
+                    $ref: '#/components/schemas/mac-interface-status'
+                example:
+                  mac-interface-1-0:mac-interface-status:
+                    interface-status: 'mac-interface-1-0:INTERFACE_STATUS_TYPE_UP'
+                    mac-address-cur: '00:00:00:00:00:00'
+                    received-ethernet-frame-format-cur: 'mac-interface-1-0:FRAME_FORMAT_TYPE_ETHERNET_2'
+                    flow-control-mode-cur: 'mac-interface-1-0:FLOW_CONTROL_MODE_TYPE_NONE'
+                    loop-detection-result: 'mac-interface-1-0:LOOP_DETECTION_RESULT_TYPE_LOOP_DETECTED'
+                    loop-back-kind-up: 'mac-interface-1-0:LOOP_BACK_TYPE_NONE'
+                    statistics-is-up: true
+                    timestamp: '2010-11-20T14:00:00+01:00'
+                    last-10-sec-frame-input-rate: 0
+                    last-10-sec-frame-output-rate: 0
+                    oversized-frames-ingress: 'string'
+                    undersized-frames-ingress: 'string'
+                    jabber-frames-ingress: 'string'
+                    fragmented-frames-ingress: 'string'
+                    unknown-protocol-frames-input: 'string'
+          headers:
+            x-correlator:
+              $ref: '#/components/headers/x-correlator'
+            exec-time:
+              $ref: '#/components/headers/exec-time'
+            backend-time:
+              $ref: '#/components/headers/backend-time'
+            life-cycle-state:
+              $ref: '#/components/headers/life-cycle-state'
+        '4XX':
+          $ref: '#/components/responses/responseForErroredServiceRequests'
+        '500':
+          $ref: '#/components/responses/responseForErroredServiceRequests'
+        default:
+          $ref: '#/components/responses/responseForErroredServiceRequests'
+
+
+########################################################################################################################
+#   Common Components
+########################################################################################################################
+components:
+  parameters:
+    user:
+      name: user
+      in: header
+      required: true
+      schema:
+        type: string
+        example: 'User Name'
+      description: 'User identifier from the system starting the service call'
+    originator:
+      name: originator
+      in: header
+      required: true
+      schema:
+        type: string
+        minLength: 3
+        example: 'Resolver'
+      description: >
+        'Identification for the system consuming the API, as defined in
+         [/core-model-1-4:control-construct/logical-termination-point={uuid}/layer-protocol=0/http-client-interface-1-0:http-client-interface-pac/http-client-interface-configuration/application-name]'
+    x-correlator:
+      name: x-correlator
+      in: header
+      required: true
+      schema:
+        type: string
+        pattern: '^[0-9A-Fa-f]{8}(?:-[0-9A-Fa-f]{4}){3}-[0-9A-Fa-f]{12}$'
+        description: 'Empty string accepted from external applications.'
+        example: '550e8400-e29b-11d4-a716-446655440000'
+      description: 'UUID for the service execution flow that allows to correlate requests and responses'
+    trace-indicator:
+      name: trace-indicator
+      in: header
+      required: true
+      schema:
+        type: string
+        pattern: '^([0-9]+)(\.([0-9]+))*$'
+        description: 'Empty string accepted from external applications.'
+        example: '1.3.1'
+      description: 'Sequence of request numbers along the flow'
+    customer-journey:
+      name: customer-journey
+      in: header
+      required: true
+      schema:
+        type: string
+        example: 'Unknown value'
+      description: 'Holds information supporting customer’s journey to which the execution applies'
+    mountName:
+      name: mountName
+      in: path
+      required: true
+      schema:
+        type: string
+        example: '222250001'
+      description: 'The mountName of the device that is addressed by the request'
+    uuid:
+      name: uuid
+      in: path
+      required: true
+      schema:
+        type: string
+        example: 'LTP-MWPS-TTP-1-1'
+      description: 'Instance identifier that is unique within the device'
+    uuid1:
+      name: uuid1
+      in: path
+      required: true
+      schema:
+        type: string
+        example: 'LTP-MWPS-TTP-1-1'
+      description: 'Another instance identifier that is unique within the device'
+    localId:
+      name: localId
+      in: path
+      required: true
+      schema:
+        type: string
+        example: 'LP-MWPS-TTP-1-1'
+      description: 'Instance identifier that is unique within its list'
+    fields:
+      name: fields
+      in: query
+      required: false
+      schema:
+        type: string
+        example: 'node(node-id;netconf-node-topology:connection-status)'
+      description: 'Query parameter to filter ressources according to RFC8040 fields filter spec'
+  responses:
+    responseForErroredServiceRequests:
+      description: 'Response in case of errored service requests'
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/errorDescription'
+      headers:
+        x-correlator:
+          schema:
+            type: string
+            pattern: '^[0-9A-Fa-f]{8}(?:-[0-9A-Fa-f]{4}){3}-[0-9A-Fa-f]{12}$'
+            example: '550e8400-e29b-11d4-a716-446655440000'
+          description: 'UUID for the service execution flow that allows to correlate requests and responses. Its value must be identical at the response compared with its corresponding request'
+        exec-time:
+          schema:
+            type: integer
+            example: 1100
+          description: 'Value written by the service provider, reporting the total elapsed time for the execution, including all the additional processing needed to retrieve the data from the backend service. Expressed in milliseconds'
+        backend-time:
+          schema:
+            type: integer
+            example: 850
+          description: 'Value written by the service provider, reporting the elapsed time for data retrieval from the backend (service invocation, database access…). Expressed in milliseconds'
+    responseForErroredOamRequests:
+      description: 'Response in case of errored OaM requests'
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/errorDescription'
+  headers:
+    x-correlator:
+      schema:
+        type: string
+        example: '550e8400-e29b-11d4-a716-446655440000'
+      description: 'UUID for the service execution flow that allows to correlate requests and responses. Its value must be identical at the response compared with its corresponding request'
+    exec-time:
+      schema:
+        type: integer
+        example: 1100
+      description: 'Value written by the service provider, reporting the total elapsed time for the execution, including all the additional processing needed to retrieve the data from the backend service. Expressed in milliseconds'
+    backend-time:
+      schema:
+        type: integer
+        example: 850
+      description: 'Value written by the service provider, reporting the elapsed time for data retrieval from the backend (service invocation, database access…). Expressed in milliseconds'
+    life-cycle-state:
+      schema:
+        type: string
+        enum:
+          - 'EXPERIMENTAL'
+          - 'OPERATIONAL'
+          - 'DEPRECATED'
+          - 'OBSOLETE'
+          - 'UNKNOWN'
+          - 'NOT_YET_DEFINED'
+        example: 'EXPERIMENTAL'
+  schemas:
+    errorDescription:
+      type: object
+      required:
+        - code
+        - message
+      properties:
+        code:
+          type: integer
+          format: int32
+        message:
+          type: string
+
+    mac-interface-capability:
+      type: object
+      required:
+        - hardware-mac-address
+        - mac-address-configuration-is-avail
+        - supported-frame-format-list
+        - supported-flow-control-mode-list
+        - link-loss-forwarding-is-avail
+        - broadcast-frame-suppression-is-avail
+        - loop-port-shut-down-is-avail
+        - loop-detection-is-avail
+        - admin-shut-down-is-avail
+        - supported-loop-back-kind-list
+        - maintenance-timer-range
+        - statistics-is-avail
+      properties:
+        hardware-mac-address:
+          type: string
+          pattern: '^[0-9a-fA-F]{2}:[0-9a-fA-F]{2}:[0-9a-fA-F]{2}:[0-9a-fA-F]{2}:[0-9a-fA-F]{2}:[0-9a-fA-F]{2}$'
+        mac-address-configuration-is-avail:
+          type: boolean
+        supported-maximum-frame-size-list:
+          type: array
+          minItems: 0
+          items:
+            type: integer
+            format: int16
+        supported-frame-format-list:
+          type: array
+          minItems: 1
+          items:
+            type: string
+            enum:
+              - 'mac-interface-1-0:FRAME_FORMAT_TYPE_ETHERNET_2'
+              - 'mac-interface-1-0:FRAME_FORMAT_TYPE_802.2_SNAP'
+              - 'mac-interface-1-0:FRAME_FORMAT_TYPE_802.2_LLC'
+              - 'mac-interface-1-0:FRAME_FORMAT_TYPE_802.3'
+              - 'mac-interface-1-0:FRAME_FORMAT_TYPE_NOT_YET_DEFINED'
+        supported-flow-control-mode-list:
+          type: array
+          minItems: 1
+          maxItems: 5
+          items:
+            type: string
+            enum:
+              - 'mac-interface-1-0:FLOW_CONTROL_MODE_TYPE_NONE'
+              - 'mac-interface-1-0:FLOW_CONTROL_MODE_TYPE_SEND_ONLY'
+              - 'mac-interface-1-0:FLOW_CONTROL_MODE_TYPE_RECEIVE_ONLY'
+              - 'mac-interface-1-0:FLOW_CONTROL_MODE_TYPE_SEND_AND_RECEIVE'
+              - 'mac-interface-1-0:FLOW_CONTROL_MODE_TYPE_AUTO_NEGOTIATION'
+              - 'mac-interface-1-0:FLOW_CONTROL_MODE_TYPE_NOT_YET_DEFINED'
+        link-loss-forwarding-is-avail:
+          type: boolean
+        supported-link-loss-forwarding-delay-list:
+          type: array
+          minItems: 0
+          items:
+            type: integer
+            format: int8
+        broadcast-frame-suppression-is-avail:
+          type: boolean
+        loop-port-shut-down-is-avail:
+          type: boolean
+        loop-detection-is-avail:
+          type: boolean
+        admin-shut-down-is-avail:
+          type: boolean
+        supported-loop-back-kind-list:
+          type: array
+          minItems: 1
+          maxItems: 3
+          items:
+            type: string
+            enum:
+              - 'mac-interface-1-0:LOOP_BACK_TYPE_NONE'
+              - 'mac-interface-1-0:LOOP_BACK_TYPE_BACK_TO_LOCAL'
+              - 'mac-interface-1-0:LOOP_BACK_TYPE_BACK_TO_REMOTE'
+              - 'mac-interface-1-0:LOOP_BACK_TYPE_NOT_YET_DEFINED'
+        maintenance-timer-range:
+          type: string
+        statistics-is-avail:
+          type: boolean
+    mac-interface-configuration:
+      type: object
+      required:
+        - interface-name
+        - mac-address-configuration-is-on
+        - configured-mac-address
+        - maximum-frame-size
+        - fragmentation-allowed
+        - transmitted-frame-format
+        - flow-control-mode
+        - link-loss-forwarding-is-on
+        - link-loss-forwarding-delay
+        - broadcast-frame-suppression-is-on
+        - maximum-share-of-broadcast-frames
+        - loop-port-shut-down-is-on
+        - loop-detection-is-on
+        - loop-back-kind-on
+        - maintenance-timer
+        - statistics-is-on
+      properties:
+        interface-name:
+          type: string
+        mac-address-configuration-is-on:
+          type: boolean
+        configured-mac-address:
+          type: string
+          pattern: '^[0-9a-fA-F]{2}:[0-9a-fA-F]{2}:[0-9a-fA-F]{2}:[0-9a-fA-F]{2}:[0-9a-fA-F]{2}:[0-9a-fA-F]{2}$'
+        maximum-frame-size:
+          type: integer
+          format: int16
+        fragmentation-allowed:
+          type: string
+          enum:
+            - 'mac-interface-1-0:FRAGMENTATION_TYPE_DISABLE'
+            - 'mac-interface-1-0:FRAGMENTATION_TYPE_ENABLE_256_BYTE'
+            - 'mac-interface-1-0:FRAGMENTATION_TYPE_ENABLE_512_BYTE'
+            - 'mac-interface-1-0:FRAGMENTATION_TYPE_NOT_YET_DEFINED'
+        transmitted-frame-format:
+          type: string
+          enum:
+            - 'mac-interface-1-0:FRAME_FORMAT_TYPE_ETHERNET_2'
+            - 'mac-interface-1-0:FRAME_FORMAT_TYPE_802.2_SNAP'
+            - 'mac-interface-1-0:FRAME_FORMAT_TYPE_802.2_LLC'
+            - 'mac-interface-1-0:FRAME_FORMAT_TYPE_802.3'
+            - 'mac-interface-1-0:FRAME_FORMAT_TYPE_NOT_YET_DEFINED'
+        flow-control-mode:
+          type: string
+          enum:
+            - 'mac-interface-1-0:FLOW_CONTROL_MODE_TYPE_NONE'
+            - 'mac-interface-1-0:FLOW_CONTROL_MODE_TYPE_SEND_ONLY'
+            - 'mac-interface-1-0:FLOW_CONTROL_MODE_TYPE_RECEIVE_ONLY'
+            - 'mac-interface-1-0:FLOW_CONTROL_MODE_TYPE_SEND_AND_RECEIVE'
+            - 'mac-interface-1-0:FLOW_CONTROL_MODE_TYPE_AUTO_NEGOTIATION'
+            - 'mac-interface-1-0:FLOW_CONTROL_MODE_TYPE_NOT_YET_DEFINED'
+        link-loss-forwarding-is-on:
+          type: boolean
+        link-loss-forwarding-delay:
+          type: integer
+          format: int8
+        broadcast-frame-suppression-is-on:
+          type: boolean
+        maximum-share-of-broadcast-frames:
+          type: integer
+          format: int8
+        loop-port-shut-down-is-on:
+          type: boolean
+        loop-detection-is-on:
+          type: boolean
+        loop-back-kind-on:
+          type: string
+          enum:
+            - 'mac-interface-1-0:LOOP_BACK_TYPE_NONE'
+            - 'mac-interface-1-0:LOOP_BACK_TYPE_BACK_TO_LOCAL'
+            - 'mac-interface-1-0:LOOP_BACK_TYPE_BACK_TO_REMOTE'
+            - 'mac-interface-1-0:LOOP_BACK_TYPE_NOT_YET_DEFINED'
+        maintenance-timer:
+          type: integer
+          format: int32
+        statistics-is-on:
+          type: boolean
+    mac-interface-status:
+      type: object
+      required:
+        - interface-status
+        - mac-address-cur
+        - received-ethernet-frame-format-cur
+        - flow-control-mode-cur
+        - loop-detection-result
+        - loop-back-kind-up
+        - statistics-is-up
+        - timestamp
+        - last-10-sec-frame-input-rate
+        - last-10-sec-frame-output-rate
+        - oversized-frames-ingress
+        - undersized-frames-ingress
+        - jabber-frames-ingress
+        - fragmented-frames-ingress
+        - unknown-protocol-frames-input
+      properties:
+        interface-status:
+          type: string
+          enum:
+            - 'mac-interface-1-0:INTERFACE_STATUS_TYPE_UP'
+            - 'mac-interface-1-0:INTERFACE_STATUS_TYPE_DOWN'
+            - 'mac-interface-1-0:INTERFACE_STATUS_TYPE_SHUT_DUE_LOOP'
+            - 'mac-interface-1-0:INTERFACE_STATUS_TYPE_TESTING'
+            - 'mac-interface-1-0:INTERFACE_STATUS_TYPE_UNKNOWN'
+            - 'mac-interface-1-0:INTERFACE_STATUS_TYPE_DORMANT'
+            - 'mac-interface-1-0:INTERFACE_STATUS_TYPE_NOT_PRESENT'
+            - 'mac-interface-1-0:INTERFACE_STATUS_TYPE_NOT_YET_DEFINED'
+        mac-address-cur:
+          type: string
+          pattern: '^[0-9a-fA-F]{2}:[0-9a-fA-F]{2}:[0-9a-fA-F]{2}:[0-9a-fA-F]{2}:[0-9a-fA-F]{2}:[0-9a-fA-F]{2}$'
+        received-ethernet-frame-format-cur:
+          type: string
+          enum:
+            - 'mac-interface-1-0:FRAME_FORMAT_TYPE_ETHERNET_2'
+            - 'mac-interface-1-0:FRAME_FORMAT_TYPE_802.2_SNAP'
+            - 'mac-interface-1-0:FRAME_FORMAT_TYPE_802.2_LLC'
+            - 'mac-interface-1-0:FRAME_FORMAT_TYPE_802.3'
+            - 'mac-interface-1-0:FRAME_FORMAT_TYPE_NOT_YET_DEFINED'
+        flow-control-mode-cur:
+          type: string
+          enum:
+            - 'mac-interface-1-0:FLOW_CONTROL_MODE_TYPE_NONE'
+            - 'mac-interface-1-0:FLOW_CONTROL_MODE_TYPE_SEND_ONLY'
+            - 'mac-interface-1-0:FLOW_CONTROL_MODE_TYPE_RECEIVE_ONLY'
+            - 'mac-interface-1-0:FLOW_CONTROL_MODE_TYPE_SEND_AND_RECEIVE'
+            - 'mac-interface-1-0:FLOW_CONTROL_MODE_TYPE_AUTO_NEGOTIATION'
+            - 'mac-interface-1-0:FLOW_CONTROL_MODE_TYPE_NOT_YET_DEFINED'
+        loop-detection-result:
+          type: string
+          enum:
+            - 'mac-interface-1-0:LOOP_DETECTION_RESULT_TYPE_LOOP_DETECTED'
+            - 'mac-interface-1-0:LOOP_DETECTION_RESULT_TYPE_NO_LOOP_DETECTED'
+            - 'mac-interface-1-0:LOOP_DETECTION_RESULT_TYPE_DETECTION_SWITCHED_OFF'
+            - 'mac-interface-1-0:LOOP_DETECTION_RESULT_TYPE_NOT_YET_DEFINED'
+        loop-back-kind-up:
+          type: string
+          enum:
+            - 'mac-interface-1-0:LOOP_BACK_TYPE_NONE'
+            - 'mac-interface-1-0:LOOP_BACK_TYPE_BACK_TO_LOCAL'
+            - 'mac-interface-1-0:LOOP_BACK_TYPE_BACK_TO_REMOTE'
+            - 'mac-interface-1-0:LOOP_BACK_TYPE_NOT_YET_DEFINED'
+        statistics-is-up:
+          type: boolean
+        timestamp:
+          type: string
+          pattern: '^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(\.\d+)?(Z|[\+\-]\d{2}:\d{2})$'
+        last-10-sec-frame-input-rate:
+          type: integer
+          format: int32
+        last-10-sec-frame-output-rate:
+          type: integer
+          format: int32
+        oversized-frames-ingress:
+          type: string
+        undersized-frames-ingress:
+          type: string
+        jabber-frames-ingress:
+          type: string
+        fragmented-frames-ingress:
+          type: string
+        unknown-protocol-frames-input:
+          type: string
+
+  securitySchemes:
+    apiKeyAuth:
+      type: apiKey
+      in: header
+      name: operation-key
+    basicAuth:
+      type: http
+      scheme: basic

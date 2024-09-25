@@ -1,0 +1,344 @@
+{
+    "/mac-interface-capability": {
+        "type": "object",
+        "required": [
+            "mac-interface-1-0:mac-interface-capability"
+        ],
+        "properties": {
+            "mac-interface-1-0:mac-interface-capability": {
+                "type": "object",
+                "required": [
+                    "hardware-mac-address",
+                    "mac-address-configuration-is-avail",
+                    "supported-frame-format-list",
+                    "supported-flow-control-mode-list",
+                    "link-loss-forwarding-is-avail",
+                    "broadcast-frame-suppression-is-avail",
+                    "loop-port-shut-down-is-avail",
+                    "loop-detection-is-avail",
+                    "admin-shut-down-is-avail",
+                    "supported-loop-back-kind-list",
+                    "maintenance-timer-range",
+                    "statistics-is-avail"
+                ],
+                "properties": {
+                    "hardware-mac-address": {
+                        "type": "string",
+                        "pattern": "^[0-9a-fA-F]{2}:[0-9a-fA-F]{2}:[0-9a-fA-F]{2}:[0-9a-fA-F]{2}:[0-9a-fA-F]{2}:[0-9a-fA-F]{2}$"
+                    },
+                    "mac-address-configuration-is-avail": {
+                        "type": "boolean"
+                    },
+                    "supported-maximum-frame-size-list": {
+                        "type": "array",
+                        "minItems": 0,
+                        "items": {
+                            "type": "integer",
+                            "format": "int16"
+                        }
+                    },
+                    "supported-frame-format-list": {
+                        "type": "array",
+                        "minItems": 1,
+                        "items": {
+                            "type": "string",
+                            "enum": [
+                                "mac-interface-1-0:FRAME_FORMAT_TYPE_ETHERNET_2",
+                                "mac-interface-1-0:FRAME_FORMAT_TYPE_802.2_SNAP",
+                                "mac-interface-1-0:FRAME_FORMAT_TYPE_802.2_LLC",
+                                "mac-interface-1-0:FRAME_FORMAT_TYPE_802.3",
+                                "mac-interface-1-0:FRAME_FORMAT_TYPE_NOT_YET_DEFINED"
+                            ]
+                        }
+                    },
+                    "supported-flow-control-mode-list": {
+                        "type": "array",
+                        "minItems": 1,
+                        "maxItems": 5,
+                        "items": {
+                            "type": "string",
+                            "enum": [
+                                "mac-interface-1-0:FLOW_CONTROL_MODE_TYPE_NONE",
+                                "mac-interface-1-0:FLOW_CONTROL_MODE_TYPE_SEND_ONLY",
+                                "mac-interface-1-0:FLOW_CONTROL_MODE_TYPE_RECEIVE_ONLY",
+                                "mac-interface-1-0:FLOW_CONTROL_MODE_TYPE_SEND_AND_RECEIVE",
+                                "mac-interface-1-0:FLOW_CONTROL_MODE_TYPE_AUTO_NEGOTIATION",
+                                "mac-interface-1-0:FLOW_CONTROL_MODE_TYPE_NOT_YET_DEFINED"
+                            ]
+                        }
+                    },
+                    "link-loss-forwarding-is-avail": {
+                        "type": "boolean"
+                    },
+                    "supported-link-loss-forwarding-delay-list": {
+                        "type": "array",
+                        "minItems": 0,
+                        "items": {
+                            "type": "integer",
+                            "format": "int8"
+                        }
+                    },
+                    "broadcast-frame-suppression-is-avail": {
+                        "type": "boolean"
+                    },
+                    "loop-port-shut-down-is-avail": {
+                        "type": "boolean"
+                    },
+                    "loop-detection-is-avail": {
+                        "type": "boolean"
+                    },
+                    "admin-shut-down-is-avail": {
+                        "type": "boolean"
+                    },
+                    "supported-loop-back-kind-list": {
+                        "type": "array",
+                        "minItems": 1,
+                        "maxItems": 3,
+                        "items": {
+                            "type": "string",
+                            "enum": [
+                                "mac-interface-1-0:LOOP_BACK_TYPE_NONE",
+                                "mac-interface-1-0:LOOP_BACK_TYPE_BACK_TO_LOCAL",
+                                "mac-interface-1-0:LOOP_BACK_TYPE_BACK_TO_REMOTE",
+                                "mac-interface-1-0:LOOP_BACK_TYPE_NOT_YET_DEFINED"
+                            ]
+                        }
+                    },
+                    "maintenance-timer-range": {
+                        "type": "string"
+                    },
+                    "statistics-is-avail": {
+                        "type": "boolean"
+                    }
+                }
+            }
+        }
+    },
+    "/mac-interface-configuration": {
+        "type": "object",
+        "required": [
+            "mac-interface-1-0:mac-interface-configuration"
+        ],
+        "properties": {
+            "mac-interface-1-0:mac-interface-configuration": {
+                "type": "object",
+                "required": [
+                    "interface-name",
+                    "mac-address-configuration-is-on",
+                    "configured-mac-address",
+                    "maximum-frame-size",
+                    "fragmentation-allowed",
+                    "transmitted-frame-format",
+                    "flow-control-mode",
+                    "link-loss-forwarding-is-on",
+                    "link-loss-forwarding-delay",
+                    "broadcast-frame-suppression-is-on",
+                    "maximum-share-of-broadcast-frames",
+                    "loop-port-shut-down-is-on",
+                    "loop-detection-is-on",
+                    "loop-back-kind-on",
+                    "maintenance-timer",
+                    "statistics-is-on"
+                ],
+                "properties": {
+                    "interface-name": {
+                        "type": "string"
+                    },
+                    "mac-address-configuration-is-on": {
+                        "type": "boolean"
+                    },
+                    "configured-mac-address": {
+                        "type": "string",
+                        "pattern": "^[0-9a-fA-F]{2}:[0-9a-fA-F]{2}:[0-9a-fA-F]{2}:[0-9a-fA-F]{2}:[0-9a-fA-F]{2}:[0-9a-fA-F]{2}$"
+                    },
+                    "maximum-frame-size": {
+                        "type": "integer",
+                        "format": "int16"
+                    },
+                    "fragmentation-allowed": {
+                        "type": "string",
+                        "enum": [
+                            "mac-interface-1-0:FRAGMENTATION_TYPE_DISABLE",
+                            "mac-interface-1-0:FRAGMENTATION_TYPE_ENABLE_256_BYTE",
+                            "mac-interface-1-0:FRAGMENTATION_TYPE_ENABLE_512_BYTE",
+                            "mac-interface-1-0:FRAGMENTATION_TYPE_NOT_YET_DEFINED"
+                        ]
+                    },
+                    "transmitted-frame-format": {
+                        "type": "string",
+                        "enum": [
+                            "mac-interface-1-0:FRAME_FORMAT_TYPE_ETHERNET_2",
+                            "mac-interface-1-0:FRAME_FORMAT_TYPE_802.2_SNAP",
+                            "mac-interface-1-0:FRAME_FORMAT_TYPE_802.2_LLC",
+                            "mac-interface-1-0:FRAME_FORMAT_TYPE_802.3",
+                            "mac-interface-1-0:FRAME_FORMAT_TYPE_NOT_YET_DEFINED"
+                        ]
+                    },
+                    "flow-control-mode": {
+                        "type": "string",
+                        "enum": [
+                            "mac-interface-1-0:FLOW_CONTROL_MODE_TYPE_NONE",
+                            "mac-interface-1-0:FLOW_CONTROL_MODE_TYPE_SEND_ONLY",
+                            "mac-interface-1-0:FLOW_CONTROL_MODE_TYPE_RECEIVE_ONLY",
+                            "mac-interface-1-0:FLOW_CONTROL_MODE_TYPE_SEND_AND_RECEIVE",
+                            "mac-interface-1-0:FLOW_CONTROL_MODE_TYPE_AUTO_NEGOTIATION",
+                            "mac-interface-1-0:FLOW_CONTROL_MODE_TYPE_NOT_YET_DEFINED"
+                        ]
+                    },
+                    "link-loss-forwarding-is-on": {
+                        "type": "boolean"
+                    },
+                    "link-loss-forwarding-delay": {
+                        "type": "integer",
+                        "format": "int8"
+                    },
+                    "broadcast-frame-suppression-is-on": {
+                        "type": "boolean"
+                    },
+                    "maximum-share-of-broadcast-frames": {
+                        "type": "integer",
+                        "format": "int8"
+                    },
+                    "loop-port-shut-down-is-on": {
+                        "type": "boolean"
+                    },
+                    "loop-detection-is-on": {
+                        "type": "boolean"
+                    },
+                    "loop-back-kind-on": {
+                        "type": "string",
+                        "enum": [
+                            "mac-interface-1-0:LOOP_BACK_TYPE_NONE",
+                            "mac-interface-1-0:LOOP_BACK_TYPE_BACK_TO_LOCAL",
+                            "mac-interface-1-0:LOOP_BACK_TYPE_BACK_TO_REMOTE",
+                            "mac-interface-1-0:LOOP_BACK_TYPE_NOT_YET_DEFINED"
+                        ]
+                    },
+                    "maintenance-timer": {
+                        "type": "integer",
+                        "format": "int32"
+                    },
+                    "statistics-is-on": {
+                        "type": "boolean"
+                    }
+                }
+            }
+        }
+    },
+    "/mac-interface-status": {
+        "type": "object",
+        "required": [
+            "mac-interface-1-0:mac-interface-status"
+        ],
+        "properties": {
+            "mac-interface-1-0:mac-interface-status": {
+                "type": "object",
+                "required": [
+                    "interface-status",
+                    "mac-address-cur",
+                    "received-ethernet-frame-format-cur",
+                    "flow-control-mode-cur",
+                    "loop-detection-result",
+                    "loop-back-kind-up",
+                    "statistics-is-up",
+                    "timestamp",
+                    "last-10-sec-frame-input-rate",
+                    "last-10-sec-frame-output-rate",
+                    "oversized-frames-ingress",
+                    "undersized-frames-ingress",
+                    "jabber-frames-ingress",
+                    "fragmented-frames-ingress",
+                    "unknown-protocol-frames-input"
+                ],
+                "properties": {
+                    "interface-status": {
+                        "type": "string",
+                        "enum": [
+                            "mac-interface-1-0:INTERFACE_STATUS_TYPE_UP",
+                            "mac-interface-1-0:INTERFACE_STATUS_TYPE_DOWN",
+                            "mac-interface-1-0:INTERFACE_STATUS_TYPE_SHUT_DUE_LOOP",
+                            "mac-interface-1-0:INTERFACE_STATUS_TYPE_TESTING",
+                            "mac-interface-1-0:INTERFACE_STATUS_TYPE_UNKNOWN",
+                            "mac-interface-1-0:INTERFACE_STATUS_TYPE_DORMANT",
+                            "mac-interface-1-0:INTERFACE_STATUS_TYPE_NOT_PRESENT",
+                            "mac-interface-1-0:INTERFACE_STATUS_TYPE_NOT_YET_DEFINED"
+                        ]
+                    },
+                    "mac-address-cur": {
+                        "type": "string",
+                        "pattern": "^[0-9a-fA-F]{2}:[0-9a-fA-F]{2}:[0-9a-fA-F]{2}:[0-9a-fA-F]{2}:[0-9a-fA-F]{2}:[0-9a-fA-F]{2}$"
+                    },
+                    "received-ethernet-frame-format-cur": {
+                        "type": "string",
+                        "enum": [
+                            "mac-interface-1-0:FRAME_FORMAT_TYPE_ETHERNET_2",
+                            "mac-interface-1-0:FRAME_FORMAT_TYPE_802.2_SNAP",
+                            "mac-interface-1-0:FRAME_FORMAT_TYPE_802.2_LLC",
+                            "mac-interface-1-0:FRAME_FORMAT_TYPE_802.3",
+                            "mac-interface-1-0:FRAME_FORMAT_TYPE_NOT_YET_DEFINED"
+                        ]
+                    },
+                    "flow-control-mode-cur": {
+                        "type": "string",
+                        "enum": [
+                            "mac-interface-1-0:FLOW_CONTROL_MODE_TYPE_NONE",
+                            "mac-interface-1-0:FLOW_CONTROL_MODE_TYPE_SEND_ONLY",
+                            "mac-interface-1-0:FLOW_CONTROL_MODE_TYPE_RECEIVE_ONLY",
+                            "mac-interface-1-0:FLOW_CONTROL_MODE_TYPE_SEND_AND_RECEIVE",
+                            "mac-interface-1-0:FLOW_CONTROL_MODE_TYPE_AUTO_NEGOTIATION",
+                            "mac-interface-1-0:FLOW_CONTROL_MODE_TYPE_NOT_YET_DEFINED"
+                        ]
+                    },
+                    "loop-detection-result": {
+                        "type": "string",
+                        "enum": [
+                            "mac-interface-1-0:LOOP_DETECTION_RESULT_TYPE_LOOP_DETECTED",
+                            "mac-interface-1-0:LOOP_DETECTION_RESULT_TYPE_NO_LOOP_DETECTED",
+                            "mac-interface-1-0:LOOP_DETECTION_RESULT_TYPE_DETECTION_SWITCHED_OFF",
+                            "mac-interface-1-0:LOOP_DETECTION_RESULT_TYPE_NOT_YET_DEFINED"
+                        ]
+                    },
+                    "loop-back-kind-up": {
+                        "type": "string",
+                        "enum": [
+                            "mac-interface-1-0:LOOP_BACK_TYPE_NONE",
+                            "mac-interface-1-0:LOOP_BACK_TYPE_BACK_TO_LOCAL",
+                            "mac-interface-1-0:LOOP_BACK_TYPE_BACK_TO_REMOTE",
+                            "mac-interface-1-0:LOOP_BACK_TYPE_NOT_YET_DEFINED"
+                        ]
+                    },
+                    "statistics-is-up": {
+                        "type": "boolean"
+                    },
+                    "timestamp": {
+                        "type": "string",
+                        "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}(\\.\\d+)?(Z|[\\+\\-]\\d{2}:\\d{2})$"
+                    },
+                    "last-10-sec-frame-input-rate": {
+                        "type": "integer",
+                        "format": "int32"
+                    },
+                    "last-10-sec-frame-output-rate": {
+                        "type": "integer",
+                        "format": "int32"
+                    },
+                    "oversized-frames-ingress": {
+                        "type": "string"
+                    },
+                    "undersized-frames-ingress": {
+                        "type": "string"
+                    },
+                    "jabber-frames-ingress": {
+                        "type": "string"
+                    },
+                    "fragmented-frames-ingress": {
+                        "type": "string"
+                    },
+                    "unknown-protocol-frames-input": {
+                        "type": "string"
+                    }
+                }
+            }
+        }
+    }
+}

@@ -17,22 +17,22 @@
 - When statement in Augmentation statement demands for LayerProtocol::layerProtocolName==LAYER_PROTOCOL_NAME_TYPE_MAC_LAYER
 
 ### YANG File
-- [MacInterface_1.0.0-tsi.240105.1030+yang.1](./MacInterface_1.0.0-tsi.240105.1030+yang.1.zip)
+- [MacInterface_1.0.0-tsi.240105.1030+yang.1](./MacInterface_1.0.0-tsi.240105.1030+yang/mac-interface-1-0.yang)
 
-### JSON Schema
-- to be provided
+### Schema
+- [MacInterface_1.0.0-tsi.240105.1030+schema](./MacInterface_1.0.0-tsi.240105.1030+schema/)
 
 ### Interface Simulator
-- to be provided
+- [MacInterface_1.0.0-tsi.240105.1030+simulator](./MacInterface_1.0.0-tsi.240105.1030+simu/)
 
 ### Interface Validator
-- [MacInterface_1.0.0-tsi.240105.1030+validator.1](./MacInterface_1.0.0-tsi.240105.1030+validator.1.zip)
+- [MacInterface_1.0.0-tsi.240105.1030+validator](./MacInterface_1.0.0-tsi.240105.1030+vali/)
 
 ### Publication
-- Candidate for ONF TR-532 v2.0 
+- Published as a part of ONF TR-532 v2.0  
 
-### Aspired Model Classification
-- Live Network
+### Model Classification
+- Operational in Live Network
 
 ### Open Issue List
 - [macInterface/issues](../../issues)
